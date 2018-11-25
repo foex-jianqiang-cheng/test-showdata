@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Framework Guru</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(pricelist)}">
+        <h2>List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>DateTime(UTC)</th>
+                <th>Pair</th>
+                <th>Price_between_max_min</th>
+            </tr>
+            <tr th:each="Price : ${pricelist}">
+                <td th:text="${Price.time}">Time</td>
+                <td>xrp_jpy</td>
+                <td th:text="${Price.fluctuation}">Fluctuation</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
