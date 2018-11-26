@@ -15,3 +15,7 @@ To execute the following command in cloud shell of GCP.
 
 `kubectl create -f web-svc.yaml`
 
+
+== Key Word
+language:Java,Spring
+Platform:GCP,GKE(kubernetes),Cloud SQL(mysql),Load balancing
