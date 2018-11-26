@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-showdata
+  labels:
+    run: web-showdata
+spec:
+  ports:
+  - nodePort: 31411
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: web-showdata
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

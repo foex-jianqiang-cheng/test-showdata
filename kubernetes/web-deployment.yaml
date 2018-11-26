@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: web-showdata
+  labels:
+    run: web-showdata
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: web-showdata
+    spec:
+      containers:
+      - name: web-showdata
+        image: jianqiang/showdata:latest
+        ports:
+        - containerPort: 8080
